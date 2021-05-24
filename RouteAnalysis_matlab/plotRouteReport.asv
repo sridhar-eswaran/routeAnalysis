@@ -1,0 +1,30 @@
+tiledlayout(2,2)
+nexttile([1,1])
+plot(Czech1.Gps_Distance,Czech1.SpdLimKPH)
+title('Speed Limit in KPH')
+text(5,20000,'test')
+
+nexttile([1,1])
+plot(Czech1.Gps_Distance,Czech1.SpdLimKPH);
+hold on
+Czech1.CornerTgtSpdCmf_KPH(Czech1.CornerTgtSpdCmf_KPH == 0) = NaN;
+Czech1.CornerTgtSpdCmf_KPH(Czech1.CornerTgtSpdCmf_KPH > Czech1.SpdLimKPH) = NaN;
+scatter(Czech1.Gps_Distance,Czech1.CornerTgtSpdCmf_KPH,'+')
+title('Corner target speed in KPH - Comfort')
+
+
+nexttile([1,1])
+plot(Czech1.Gps_Distance,Czech1.SpdLimKPH);
+hold on
+Czech1.CornerTgtSpdEco_KPH(Czech1.CornerTgtSpdEco_KPH == 0) = NaN;
+Czech1.CornerTgtSpdEco_KPH(Czech1.CornerTgtSpdEco_KPH > Czech1.SpdLimKPH) = NaN;
+scatter(Czech1.Gps_Distance,Czech1.CornerTgtSpdEco_KPH,'+')
+title('Corner target speed in KPH - Eco')
+
+nexttile([1,1])
+plot(Czech1.Gps_Distance,Czech1.SpdLimKPH);
+hold on
+Czech1.CornerTgtSpdDyn_KPH(Czech1.CornerTgtSpdDyn_KPH == 0) = NaN;
+Czech1.CornerTgtSpdDyn_KPH(Czech1.CornerTgtSpdDyn_KPH > Czech1.SpdLimKPH) = NaN;
+scatter(Czech1.Gps_Distance,Czech1.CornerTgtSpdDyn_KPH,'+')
+title('Corner target speed in KPH - Eco')
